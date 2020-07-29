@@ -2,6 +2,7 @@ package com.example.PopulateSpinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -51,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String newName = et_addNames.getContext().toString();
-                        friends.add(n);
+                        String newName = et_addNames.getText().toString();
+                        friends.add(newName);
 
                         Collections.sort(friends);
 
@@ -64,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
         lv_listNames.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, "pos = " + i + "name = " + friends.get(i), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "pos =  "  + i +  " name =  " + friends.get(i), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, Profile.class);
+                startActivity(intent);
             }
         });
     }
