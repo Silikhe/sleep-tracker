@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
     Button btn_add;
     EditText et_addNames;
@@ -66,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(MainActivity.this, "pos =  "  + i +  " name =  " + friends.get(i), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, Profile.class);
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+//                intent.putExtra("friendName", et_addNames.getText().toString());
+                Log.d(TAG, "onItemClick: started");
                 startActivity(intent);
             }
         });
