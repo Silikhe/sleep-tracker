@@ -22,6 +22,7 @@ import android.os.Build
 import android.text.Html
 import android.text.Spanned
 import androidx.core.text.HtmlCompat
+import androidx.lifecycle.Transformations
 import com.example.android.trackmysleepquality.database.SleepNight
 import java.text.SimpleDateFormat
 
@@ -103,3 +104,7 @@ fun formatNights(nights: List<SleepNight>, resources: Resources): Spanned {
         return HtmlCompat.fromHtml(sb.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
     }
 }
+
+//val nightsString = Transformations.map(nights) { nights ->
+//    formatNights(nights, application.resources)
+//}
