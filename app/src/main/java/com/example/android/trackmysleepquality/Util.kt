@@ -30,6 +30,22 @@ import java.text.SimpleDateFormat
  * These functions create a formatted string that can be set in a TextView.
  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Returns a string representing the numeric quality rating.
  */
@@ -105,6 +121,6 @@ fun formatNights(nights: List<SleepNight>, resources: Resources): Spanned {
     }
 }
 
-//val nightsString = Transformations.map(nights) { nights ->
-//    formatNights(nights, application.resources)
-//}
+val nightsString = Transformations.map(nights) { nights ->
+    formatNights(nights, application.resources)
+}
